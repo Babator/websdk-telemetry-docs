@@ -9,14 +9,14 @@ See `telemetry-example.js` for full example of how to register to Babator's tele
 Babator.telemetry.availableEvents;
 ```
 
-### Listen for a specific event
+### Listen for a Specific Event
 ```javascript
 Babator.telemetry.on('event-tag', function (event, data) {
   console.log('Data: ' + JSON.stringify(data, null, 2));
 });
 ```
 
-### Listen for all events
+### Listen for All Events
 ```javascript
 Babator.telemetry.on('*', function (event, data) {
   console.log('[Event: ' + event, '] Data: ' + JSON.stringify(data, null, 2));
