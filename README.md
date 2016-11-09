@@ -38,7 +38,7 @@ Babator.telemetry.on('start', function (event, data) { ... });
 #### Data: 
 ```javascript
 {
-  // True, if video started automatically and byBabator is True; otherwise, false.
+  // True, when video started by Babator; otherwise, false.
   isAutoStart: Boolean,
   // Full URL of the video.
   videoUrl: String,
@@ -62,7 +62,7 @@ Babator.telemetry.on('request', function (event, data) { ... });
 #### Data: 
 ```javascript
 {
-  // True, if video started automatically and byBabator is True; otherwise, false.
+  // True, when video started by Babator; otherwise, false.
   isAutoPlay: Boolean,
   // Full URL of the video to be played next.
   videoUrl: String,
