@@ -24,8 +24,14 @@ Babator.telemetry.on('*', function (event, data) {
 ```
 
 ## Telemetry Events
+* [Start](#start)
+* [Auto Start](#auto-start)
+* [Auto First](#auto-first)
+* [Recommendation Click](#recommendation-click)
+* [Auto Play](#auto-play)
 
-### Start (tag: 'start')
+### Start
+**_Event Tag: 'start'_**  
 Fired when a video starts.  
 Example:
 ```javascript 
@@ -46,7 +52,8 @@ Babator.telemetry.on('start', function (event, data) { ... });
 }
 ```
 
-### Auto Start (tag: 'autoStart')
+### Auto Start
+**_Event Tag: 'autoStart'_**  
 Fired when a video is started automatically by Babator. Replaces *Start* event.  
 Example:
 ```javascript 
@@ -63,7 +70,8 @@ Babator.telemetry.on('autoStart', function (event, data) { ... });
 }
 ```
 
-### Auto First (tag: 'autoFirst')
+### Auto First
+**_Event Tag: 'autoFirst'_**  
 Fired when an In-Read video is started automatically by Babator. Replaces *Start* event.  
 Example:
 ```javascript 
@@ -80,7 +88,8 @@ Babator.telemetry.on('autoFirst', function (event, data) { ... });
 }
 ```
 
-### Auto Play (tag: 'autoPlay')
+### Auto Play
+**_Event Tag: 'autoPlay'_**  
 Fired when the next video is started automatically by Babator.  
 Example:
 ```javascript 
@@ -97,7 +106,8 @@ Babator.telemetry.on('autoPlay', function (event, data) { ... });
 }
 ```
 
-### Recommendation Click (tag: 'recommendationClick')
+### Recommendation Click
+**_Event Tag: 'recommendationClick'_**  
 Fired when the user clicks on a Babator video recommendation.  
 Example:
 ```javascript 
