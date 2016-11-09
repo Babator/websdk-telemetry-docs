@@ -25,10 +25,7 @@ Babator.telemetry.on('*', function (event, data) {
 
 ## Telemetry Events
 * [Start](#start)
-* [Auto Start](#auto-start)
-* [Auto First](#auto-first)
-* [Recommendation Click](#recommendation-click)
-* [Auto Play](#auto-play)
+* [Request](#request)
 
 ### Start
 **_Event Tag: 'start'_**  
@@ -41,6 +38,8 @@ Babator.telemetry.on('start', function (event, data) { ... });
 #### Data: 
 ```javascript
 {
+  // True, if video started automatically and byBabator is True; otherwise, false.
+  isAutoStart: Boolean,
   // Full URL of the video.
   videoUrl: String,
   // Custom video ID from metadata, if present; otherwise, same as videoUrl.   
@@ -52,74 +51,22 @@ Babator.telemetry.on('start', function (event, data) { ... });
 }
 ```
 
-### Auto Start
-**_Event Tag: 'autoStart'_**  
-Fired when a video is started automatically by Babator. Replaces *Start* event.  
-Example:
-```javascript 
-Babator.telemetry.on('autoStart', function (event, data) { ... });
-```
-
-#### Data: 
-```javascript
-{
-  // Full URL of the video.
-  videoUrl: String,
-  // Custom video ID from metadata, if present; otherwise, same as videoUrl.   
-  videoId: String
-}
-```
-
-### Auto First
-**_Event Tag: 'autoFirst'_**  
-Fired when an In-Read video is started automatically by Babator. Replaces *Start* event.  
-Example:
-```javascript 
-Babator.telemetry.on('autoFirst', function (event, data) { ... });
-```
-
-#### Data: 
-```javascript
-{
-  // Full URL of the video.
-  videoUrl: String,
-  // Custom video ID from metadata, if present; otherwise, same as videoUrl.   
-  videoId: String
-}
-```
-
-### Auto Play
-**_Event Tag: 'autoPlay'_**  
+### Request
+**_Event Tag: 'request'_**  
 Fired when the next video is started automatically by Babator.  
 Example:
 ```javascript 
-Babator.telemetry.on('autoPlay', function (event, data) { ... });
+Babator.telemetry.on('request', function (event, data) { ... });
 ```
 
 #### Data: 
 ```javascript
 {
+  // True, if video started automatically and byBabator is True; otherwise, false.
+  isAutoPlay: Boolean,
   // Full URL of the video to be played next.
   videoUrl: String,
   // Custom video ID of the video to be played next.
-  videoId: String
-}
-```
-
-### Recommendation Click
-**_Event Tag: 'recommendationClick'_**  
-Fired when the user clicks on a Babator video recommendation.  
-Example:
-```javascript 
-Babator.telemetry.on('recommendationClick', function (event, data) { ... });
-```
-
-#### Data: 
-```javascript
-{
-  // Full URL of the video selected by the user.
-  videoUrl: String,
-  // Custom video ID of the video selected by the user.
   videoId: String
 }
 ```
