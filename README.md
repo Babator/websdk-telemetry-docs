@@ -67,7 +67,9 @@ Babator.telemetry.on('request', function (event, data) { ... });
   // Full URL of the video to be played next.
   videoUrl: String,
   // Custom video ID of the video to be played next.
-  videoId: String
+  videoId: String,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean
 }
 ```
 
