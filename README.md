@@ -47,7 +47,11 @@ Babator.telemetry.on('start', function (event, data) { ... });
   // True, if video started as result of Babator services; otherwise, false.
   byBabator: Boolean,
   // True, if video is played in In-Read mode; otherwise, false.
-  inRead: Boolean
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
 }
 ```
 
@@ -69,7 +73,11 @@ Babator.telemetry.on('request', function (event, data) { ... });
   // Custom video ID of the video to be played next.
   videoId: String,
   // True, if video is played in In-Read mode; otherwise, false.
-  inRead: Boolean
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
 }
 ```
 
