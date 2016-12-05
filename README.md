@@ -68,6 +68,8 @@ Babator.telemetry.on('request', function (event, data) { ... });
 {
   // True, when video started by Babator; otherwise, false.
   isAutoPlay: Boolean,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
   // Full URL of the video to be played next.
   videoUrl: String,
   // Custom video ID of the video to be played next.
