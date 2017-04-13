@@ -57,7 +57,7 @@ Babator.telemetry.on('start', function (event, data) { ... });
 
 ### Request
 **_Event Tag: 'request'_**  
-Fired when the next video is started by Babator.  
+Fired when the next video is requested from Babator recommendations.  
 Example:
 ```javascript 
 Babator.telemetry.on('request', function (event, data) { ... });
