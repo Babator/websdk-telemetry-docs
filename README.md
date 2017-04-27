@@ -24,25 +24,55 @@ Babator.telemetry.on('*', function (event, data) {
 ```
 
 ## Telemetry Events
+* [Video Load](#video%20load)
 * [Start](#start)
+* [Ad Start](#ad%20start)
 * [Request](#request)
+* [Content Start](#content%20start)
+* [Video Pause](#video%20pause)
+* [Video Complete](#video%20complete)
+* [Ad Complete](#ad%20complete)
+* [Video View 25% Checkpoint](#Video%20View%2025%25%20Checkpoint)
+* [Video View 50% Checkpoint](#Video%20View%2050%25%20Checkpoint)
+* [Video View 75% Checkpoint](#Video%20View%2075%25%20Checkpoint)
+
 
 ### Start
-**_Event Tag: 'start'_**  
-Fired when a video starts.  
-Example:
-```javascript 
-Babator.telemetry.on('start', function (event, data) { ... });
-```
+**_Event Tags: 'start', 'videoStart'_**
 
-#### Data: 
+Fired when a video starts, before pre-roll.
+
+#### Data:
 ```javascript
 {
   // True, when video started by Babator; otherwise, false.
   isAutoStart: Boolean,
   // Full URL of the video.
   videoUrl: String,
-  // Custom video ID from metadata, if present; otherwise, same as videoUrl.   
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Ad Start
+**_Event Tags: 'videoAdStart'_**
+
+Fired when an Ad starts playing.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
   videoId: String,
   // True, if video started as result of Babator services; otherwise, false.
   byBabator: Boolean,
@@ -56,14 +86,11 @@ Babator.telemetry.on('start', function (event, data) { ... });
 ```
 
 ### Request
-**_Event Tag: 'request'_**  
-Fired when the next video is requested from Babator recommendations.  
-Example:
-```javascript 
-Babator.telemetry.on('request', function (event, data) { ... });
-```
+**_Event Tags: 'request', 'videoRequest'_**
 
-#### Data: 
+Fired when the next video is requested from Babator recommendations.
+
+#### Data:
 ```javascript
 {
   // True, when video started by Babator; otherwise, false.
@@ -82,6 +109,149 @@ Babator.telemetry.on('request', function (event, data) { ... });
   videoNumber: Number
 }
 ```
+
+### Video Load
+**_Event Tags: 'playerLoad', 'videoPlayerLoad'_**
+
+Fired when a video is loaded.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Content Start
+**_Event Tags: 'videoContentPlay'_**
+
+Fired when video content is started, after pre-roll.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Video Pause
+**_Event Tags: 'videoPause'_**
+
+Fired when the video is paused.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Video Complete
+**_Event Tags: 'videoComplete'_**
+
+Fired when the video reaches the end.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Ad Complete
+**_Event Tags: 'videoAdComplete'_**
+
+Fired when an Ad completes.
+Does not fire when an Ad is skipped.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Video View 25% Checkpoint
+**_Event Tags: 'videoViewCheckpoint'_**
+
+Fired after the first quarter is done playing or the user has seeked pass the end of the first quarter.
+Fires once per video even if use seeks back.
+
+#### Data:
+```N/A```
+
+### Video View 50% Checkpoint
+**_Event Tags: 'videoViewCheckpoint'_**
+
+Fired after the second quarter is done playing or the user has seeked pass the end of the second quarter.
+Fires once per video even if use seeks back.
+
+#### Data:
+```N/A```
+
+### Video View 75% Checkpoint
+**_Event Tags: 'videoViewCheckpoint'_**
+
+Fired after the third quarter is done playing or the user has seeked pass the end of the third quarter.
+Fires once per video even if use seeks back.
+
+#### Data:
+```N/A```
 
 ### Remove All Event Listeners
 ```javascript
