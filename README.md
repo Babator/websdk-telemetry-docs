@@ -23,10 +23,15 @@ Babator.telemetry.on('*', function (event, data) {
 });
 ```
 
+### Remove All Event Listeners
+```javascript
+Babator.telemetry.reset();
+```
+
 ## Telemetry Events
 * [Video Load](#video%20load)
 * [Start](#start)
-* [Ad Start](#ad%20start)
+* [Ad Start](#ad start)
 * [Request](#request)
 * [Content Start](#content%20start)
 * [Video Pause](#video%20pause)
@@ -252,8 +257,3 @@ Fires once per video even if use seeks back.
 
 #### Data:
 ```N/A```
-
-### Remove All Event Listeners
-```javascript
-Babator.telemetry.reset();
-```
