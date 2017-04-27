@@ -37,9 +37,9 @@ Babator.telemetry.reset();
 * [Video Pause](#video-pause)
 * [Video Complete](#video-complete)
 * [Ad Complete](#ad-complete)
-* [Video View 25% Checkpoint](#Video-View-25-Checkpoint)
-* [Video View 50% Checkpoint](#Video-View-50-Checkpoint)
-* [Video View 75% Checkpoint](#Video-View-75-Checkpoint)
+* [Video View 25% Checkpoint](#video-view-25-checkpoint)
+* [Video View 50% Checkpoint](#video-view-50-checkpoint)
+* [Video View 75% Checkpoint](#video-view-75-checkpoint)
 
 
 ### Start
