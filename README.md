@@ -212,7 +212,7 @@ Fired when the video is paused.
 **_Event Tags: 'videoViewCheckpoint'_**
 
 Fired after the first quarter is done playing or the user has seeked pass the end of the first quarter.
-Fires once per video even if use seeks back.
+Fires once per video even if user seeks back.
 
 #### Data:
 ```N/A```
@@ -221,7 +221,7 @@ Fires once per video even if use seeks back.
 **_Event Tags: 'videoViewCheckpoint'_**
 
 Fired after the second quarter is done playing or the user has seeked pass the end of the second quarter.
-Fires once per video even if use seeks back.
+Fires once per video even if user seeks back.
 
 #### Data:
 ```N/A```
@@ -230,7 +230,7 @@ Fires once per video even if use seeks back.
 **_Event Tags: 'videoViewCheckpoint'_**
 
 Fired after the third quarter is done playing or the user has seeked pass the end of the third quarter.
-Fires once per video even if use seeks back.
+Fires once per video even if user seeks back.
 
 #### Data:
 ```N/A```
