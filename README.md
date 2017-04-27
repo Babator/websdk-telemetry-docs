@@ -29,17 +29,17 @@ Babator.telemetry.reset();
 ```
 
 ## Telemetry Events
-* [Video Load](#video%20load)
+* [Video Load](#video-load)
 * [Start](#start)
-* [Ad Start](#ad%20start)
+* [Ad Start](#ad-start)
 * [Request](#request)
-* [Content Start](#content%20start)
-* [Video Pause](#video%20pause)
-* [Video Complete](#video%20complete)
-* [Ad Complete](#ad%20complete)
-* [Video View 25% Checkpoint](#Video%20View%2025%25%20Checkpoint)
-* [Video View 50% Checkpoint](#Video%20View%2050%25%20Checkpoint)
-* [Video View 75% Checkpoint](#Video%20View%2075%25%20Checkpoint)
+* [Content Start](#content-start)
+* [Video Pause](#video-pause)
+* [Video Complete](#video-complete)
+* [Ad Complete](#ad-complete)
+* [Video View 25% Checkpoint](#Video-View-25%-Checkpoint)
+* [Video View 50% Checkpoint](#Video-View-50%-Checkpoint)
+* [Video View 75% Checkpoint](#Video-View-75%-Checkpoint)
 
 
 ### Start
