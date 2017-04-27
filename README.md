@@ -209,7 +209,7 @@ Fired when the video is paused.
 ```
 
 ### Video View 25% Checkpoint
-**_Event Tags: 'videoViewCheckpoint'_**
+**_Event Tags: 'videoView25Checkpoint'_**
 
 Fired after the first quarter is done playing or the user has seeked pass the end of the first quarter.
 Fires once per video even if user seeks back.
@@ -218,7 +218,7 @@ Fires once per video even if user seeks back.
 ```N/A```
 
 ### Video View 50% Checkpoint
-**_Event Tags: 'videoViewCheckpoint'_**
+**_Event Tags: 'videoView50Checkpoint'_**
 
 Fired after the second quarter is done playing or the user has seeked pass the end of the second quarter.
 Fires once per video even if user seeks back.
@@ -227,7 +227,7 @@ Fires once per video even if user seeks back.
 ```N/A```
 
 ### Video View 75% Checkpoint
-**_Event Tags: 'videoViewCheckpoint'_**
+**_Event Tags: 'videoView75Checkpoint'_**
 
 Fired after the third quarter is done playing or the user has seeked pass the end of the third quarter.
 Fires once per video even if user seeks back.
