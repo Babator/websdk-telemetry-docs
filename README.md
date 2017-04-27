@@ -31,7 +31,7 @@ Babator.telemetry.reset();
 ## Telemetry Events
 * [Video Load](#video%20load)
 * [Start](#start)
-* [Ad Start](#ad start)
+* [Ad Start](#ad%20start)
 * [Request](#request)
 * [Content Start](#content%20start)
 * [Video Pause](#video%20pause)
