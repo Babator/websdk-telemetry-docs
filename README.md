@@ -29,18 +29,66 @@ Babator.telemetry.reset();
 ```
 
 ## Telemetry Events
+* [Request](#request)
 * [Video Load](#video-load)
 * [Start](#start)
 * [Ad Start](#ad-start)
-* [Request](#request)
+* [Ad Complete](#ad-complete)
 * [Content Start](#content-start)
 * [Video Pause](#video-pause)
-* [Video Complete](#video-complete)
-* [Ad Complete](#ad-complete)
 * [Video View 25% Checkpoint](#video-view-25-checkpoint)
 * [Video View 50% Checkpoint](#video-view-50-checkpoint)
 * [Video View 75% Checkpoint](#video-view-75-checkpoint)
+* [Video Complete](#video-complete)
 
+
+### Request
+**_Event Tags: 'request', 'videoRequest'_**
+
+Fired when the next video is requested from Babator recommendations.
+
+#### Data:
+```javascript
+{
+  // True, when video started by Babator; otherwise, false.
+  isAutoPlay: Boolean,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // Full URL of the video to be played next.
+  videoUrl: String,
+  // Custom video ID of the video to be played next.
+  videoId: String,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
+
+### Video Load
+**_Event Tags: 'playerLoad', 'videoPlayerLoad'_**
+
+Fired when a video is loaded.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
 
 ### Start
 **_Event Tags: 'start', 'videoStart'_**
@@ -90,35 +138,11 @@ Fired when an Ad starts playing.
 }
 ```
 
-### Request
-**_Event Tags: 'request', 'videoRequest'_**
+### Ad Complete
+**_Event Tags: 'videoAdComplete'_**
 
-Fired when the next video is requested from Babator recommendations.
-
-#### Data:
-```javascript
-{
-  // True, when video started by Babator; otherwise, false.
-  isAutoPlay: Boolean,
-  // True, if video started as result of Babator services; otherwise, false.
-  byBabator: Boolean,
-  // Full URL of the video to be played next.
-  videoUrl: String,
-  // Custom video ID of the video to be played next.
-  videoId: String,
-  // True, if video is played in In-Read mode; otherwise, false.
-  inRead: Boolean,
-  // Type of the player
-  playerType: String,
-  // Sequential number of the video being played. Starts at 1.
-  videoNumber: Number
-}
-```
-
-### Video Load
-**_Event Tags: 'playerLoad', 'videoPlayerLoad'_**
-
-Fired when a video is loaded.
+Fired when an Ad completes.
+Does not fire when an Ad is skipped.
 
 #### Data:
 ```javascript
@@ -184,53 +208,6 @@ Fired when the video is paused.
 }
 ```
 
-### Video Complete
-**_Event Tags: 'videoComplete'_**
-
-Fired when the video reaches the end.
-
-#### Data:
-```javascript
-{
-  // Full URL of the video.
-  videoUrl: String,
-  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
-  videoId: String,
-  // True, if video started as result of Babator services; otherwise, false.
-  byBabator: Boolean,
-  // True, if video is played in In-Read mode; otherwise, false.
-  inRead: Boolean,
-  // Type of the player
-  playerType: String,
-  // Sequential number of the video being played. Starts at 1.
-  videoNumber: Number
-}
-```
-
-### Ad Complete
-**_Event Tags: 'videoAdComplete'_**
-
-Fired when an Ad completes.
-Does not fire when an Ad is skipped.
-
-#### Data:
-```javascript
-{
-  // Full URL of the video.
-  videoUrl: String,
-  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
-  videoId: String,
-  // True, if video started as result of Babator services; otherwise, false.
-  byBabator: Boolean,
-  // True, if video is played in In-Read mode; otherwise, false.
-  inRead: Boolean,
-  // Type of the player
-  playerType: String,
-  // Sequential number of the video being played. Starts at 1.
-  videoNumber: Number
-}
-```
-
 ### Video View 25% Checkpoint
 **_Event Tags: 'videoViewCheckpoint'_**
 
@@ -257,3 +234,26 @@ Fires once per video even if use seeks back.
 
 #### Data:
 ```N/A```
+
+### Video Complete
+**_Event Tags: 'videoComplete'_**
+
+Fired when the video reaches the end.
+
+#### Data:
+```javascript
+{
+  // Full URL of the video.
+  videoUrl: String,
+  // Custom video ID from metadata, if present; otherwise, same as videoUrl.
+  videoId: String,
+  // True, if video started as result of Babator services; otherwise, false.
+  byBabator: Boolean,
+  // True, if video is played in In-Read mode; otherwise, false.
+  inRead: Boolean,
+  // Type of the player
+  playerType: String,
+  // Sequential number of the video being played. Starts at 1.
+  videoNumber: Number
+}
+```
